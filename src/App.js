@@ -1,16 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 import "./App.css";
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
-      {
-    0 ? <h1>{1}</h1> : <h1>{0}</h1>
-  }
+      <Header />
+      <Gallery />
+      <Footer />
     </div>
   );
 }

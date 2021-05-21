@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header nasaData={nasaData} />
       <Gallery nasaData={nasaData} />
       <Footer />
     </div>

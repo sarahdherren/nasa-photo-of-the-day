@@ -4,6 +4,7 @@ import "./App.css";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Gallery from './components/Gallery';
+import Background from './styles/Background';
 
 function App() {
 
@@ -20,17 +21,22 @@ function App() {
         .then(res => {
           console.log(res.data)
           setNasaData(res.data)
-      });
+      })
+        .catch(err => {
+          console.log(err)
+        })
     }
     load()
   }, [])
 
+  
+
   return (
-    <div className="App">
+    <Background className="App">
       <Header nasaData={nasaData} />
       <Gallery nasaData={nasaData} />
-      <Footer />
-    </div>
+      <Footer nasaData={nasaData} />
+    </Background>
   );
 }
 

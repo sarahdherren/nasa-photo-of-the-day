@@ -1,14 +1,15 @@
 import React from 'react';
+import { Title, PhotoTitle } from '../styles/Content';
 
 const Header = (props) => {
 
     return (
         <div>
-            <h1>Astronomy Photo of the Day</h1>
-            <h1>From NASA</h1>
-            <h2>{props.nasaData.title}</h2>
+            <Title>Astronomy Photo of the Day</Title>
+            <PhotoTitle>{props.nasaData.title}</PhotoTitle>
         </div>
     )
 }
 
 export default Header;
+

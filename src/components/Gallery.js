@@ -1,12 +1,27 @@
 import React from 'react';
+import styled from "styled-components";
+import Content from '../styles/Content';
 
 const Gallery = (props) => {
 
+    const Image = styled.img`
+        height: 100%;
+        max-height: 50vh;
+        width: auto;
+        border-radius: 20px;
+    `;
+
+
     return (
         <div>
-            <img src={props.nasaData.url} />
-            <p>{props.nasaData.date}</p>
-            <p>{props.nasaData.explanation}</p>
+            <Image src={props.nasaData.url} />
+            
+            <Content>
+                {props.nasaData.date}
+                <br />
+                <br />
+                {props.nasaData.explanation}
+            </Content>
         </div>
     )
 }

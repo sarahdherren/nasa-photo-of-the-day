@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./App.css";
+import { apiUrl, apiKey } from './constants';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Gallery from './components/Gallery';
@@ -11,10 +12,9 @@ function App() {
   const[nasaData, setNasaData] = useState([]);
 
   useEffect(() => {
-    const load = () => {
-      axios.get('https://api.nasa.gov/planetary/apod', {
+      axios.get(apiUrl, {
         params: {
-          api_key: 'DEMO_KEY'
+          api_key: apiKey
         }
         
         })
@@ -25,8 +25,6 @@ function App() {
         .catch(err => {
           console.log(err)
         })
-    }
-    load()
   }, [])
 
   
